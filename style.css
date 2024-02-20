@@ -1,0 +1,95 @@
+:root {
+    --background-color: #dad7cd;
+    --text-color: #132a13;
+    --dark-color: #344e41;
+    --drop-shadow-light: #344e41;
+    --secondary-color: #a3b18a;
+    --border-color: #588157;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+.drop-shadow {
+    box-shadow: rgba(232, 222, 251, 0.15) 1.95px 1.95px 2.6px;
+    /* box-shadow: var(--drop-shadow-light) 0px 2px 8px 0px; */
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* Homepage */
+
+.home {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-auto-rows: repeat(2, 30%);
+    gap: 1rem;
+    width: 50%;
+    border-radius: 20px;
+    padding: 2rem;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    /* border: 1px solid var(--border-color); */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.homebuttons {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    /* border: 1px solid var(--border-color); */
+    color: var(--text-color);
+    justify-content: center;
+    align-content: center;
+    font-size: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: lightgray;
+}
+
+#newgameheadingtext {
+    grid-area: 1/1/1/4;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#newgame {
+    grid-area: 2/1/2/2;
+}
+
+#newgame:hover {
+    background-color: #a7c957;
+}
+
+#continue {
+    grid-area: 2/2/2/3;
+}
+
+#continue:hover {
+    background-color: #34a0a4;
+}
+
+#rules {
+    grid-area: 2/3/2/4;
+}
+
+#rules:hover {
+    background-color: #f2e8cf;
+}
+
+#playbutton {
+    background-color: #bc4749;
+}
