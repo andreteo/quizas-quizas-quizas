@@ -12,17 +12,15 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--background-color)">
+        <nav class="navbar navbar-expand-lg navbar-light" id="nav" style="background-color: var(--background-color)">
             <a class="navbar-brand" style="color: var(--text-color)">Home</a>
             <a class="btn btn-outline-dark mr-2" href="#">Home</a>
             <a class="btn btn-outline-dark mr-2" href="./scores.html">Scoreboard</a>
             <a class="btn btn-outline-dark" id="playbutton">Audio</a>
-            <a class="btn btn-outline-dark" id="increasePlayback">up</a>
-            <a class="btn btn-outline-dark" id="decreasePlayback">down</a>
         </nav>
 
         <div class="center-screen">
-            <div class="home">
+            <div class="home" id="homescreen">
                 <div id="newgameheadingtext"></div>
                 <a class="homebuttons" id="newgame">New Game</a>
                 <a class="homebuttons" id="continue">Continue</a>
@@ -30,6 +28,14 @@
             </div>
         </div>
 
+        <div class="modal hidden" id="homemodal">
+            <div id="sometext"></div>
+            <!-- <a class="btn btn-success" id="start"> Close </a>
+            <a class="btn btn-danger" id="cancel"> Close </a> -->
+        </div>
+        <div class="overlay hidden" id="homeoverlay"></div>
+
         <script src="script.js"></script>
+        <!-- <script src="class.js"></script> -->
     </body>
 </html>

@@ -1,5 +1,5 @@
 class AudioPlayer {
-    constructor(audio = "./sound/Andrea-Bocelli_Quizas,Quizas,Quizas_ft.-Jennifer-Lopez.mp3", timeElapsed = 0, isPlaying = false, playbackSpeed = 1.0) {
+    constructor(audio = "./sound/Andrea-Bocelli_Quizas,Quizas,Quizas_ft.-Jennifer-Lopez.mp3", timeElapsed = 0.0, isPlaying = false, playbackSpeed = 1.0) {
         this.audio = new Audio(audio);
         this.timeElapsed = timeElapsed;
         this.isPlaying = isPlaying;
@@ -47,35 +47,91 @@ class AudioPlayer {
 
     saveMetadata() {
         return {
-
+            playbackRate: this.playbackRate,
+            timeElapsed: this.currentTime,
         }
     }
 }
 
-// const homepageEl = document.querySelector("home");
-const newGameBtn = document.getElementById("newgame");
+class Player {
+    constructor(playerId = 0, playerName = "default-player", playerScores = []) {
+        this.playerId = playerId;
+        this.playerName = playerName;
+        this.playerScores = playerScores;
+    };
+}
 
-const continueBtn = document.getElementById("continue");
-const rulesBtn = document.getElementById("rules");
+class Scoreboard {
+    constructor(players = []) {
+        this.players = players;
+    }
 
+    addPlayer(playerName) {
+        const newPlayer = new Player(playerName);
+        this.players.push(newPlayer);
+    }
+}
 
+const toggleModal = function () {
+    if (homeModal.classList.contains("hidden")) {
+        homeModal.classList.remove("hidden");
+        homeOverlay.classList.remove("hidden");
+    } else {
+        homeModal.classList.add("hidden");
+        homeOverlay.classList.add("hidden");
+    }
+}
 
-newGameBtn.addEventListener("click", function (e) {
-    e.preventDefault();
+const homeScreen = document.getElementById("homescreen");
+const homeModal = document.getElementById("homemodal");
+const homeOverlay = document.getElementById("homeoverlay");
 
-    console.log("new game button clicked");
+/*
+    Home Screen
+*/
+homeScreen.addEventListener("click", function (e) {
+
+    const target = e.target;
+    if (target.id === "homescreen" || target.id === "newgameheadingtext") {
+        return;
+    }
+
+    console.log(target);
+
+    switch (target.id) {
+        case "newgame": {
+            console.log("New Game pressed");
+            break;
+        };
+        case "rules": {
+            homeModal.innerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, modi, culpa quasi doloremque, harum totam et possimus laudantium vel porro neque. Incidunt libero commodi rerum, consequuntur itaque sapiente cumque officia.";
+            break;
+        };
+    }
+    homeModal.innerHTML = '<a class="btn btn-success" id="start">Close</a>' + '<a class="btn btn-danger" id="cancel"> Close </a>';
+    toggleModal();
 })
 
-continueBtn.addEventListener("click", function (e) {
-    e.preventDefault();
+/* 
+    New Game Window
+*/
+// <a class="btn btn-success" id="start"> Close </a>
+{/* <a class="btn btn-danger" id="cancel"> Close </a> */ }
+homeModal.addEventListener("click", function (e) {
+    const target = e.target;
 
-    console.log("continue button clicked");
-})
-
-rulesBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    console.log("rules button clicked");
+    switch (target.id) {
+        case "start": {
+            console.log("Start Button Clicked");
+            toggleModal();
+            break;
+        };
+        case "cancel": {
+            console.log("Cancel Button Clicked");
+            toggleModal();
+            break;
+        }
+    }
 })
 
 function initGame() {
@@ -83,8 +139,6 @@ function initGame() {
     const newGameTitle = document.querySelector("#newgameheadingtext");
     const backgroundMusic = new AudioPlayer();
     const playButton = document.getElementById("playbutton");
-    const increasePlaybackBtn = document.getElementById("increasePlayback");
-    const decreasePlaybackBtn = document.getElementById("decreasePlayback");
 
     newGameTitle.innerHTML = TITLE;
     document.querySelector("title").textContent = TITLE;
@@ -99,12 +153,12 @@ function initGame() {
         }
     })
 
-    increasePlaybackBtn.addEventListener("click", () => {
-        backgroundMusic.increasePlaybackSpeed();
-    });
-    decreasePlaybackBtn.addEventListener("click", () => {
-        backgroundMusic.decreasePlaybackSpeed();
-    });
+    // increasePlaybackBtn.addEventListener("click", () => {
+    //     backgroundMusic.increasePlaybackSpeed();
+    // });
+    // decreasePlaybackBtn.addEventListener("click", () => {
+    //     backgroundMusic.decreasePlaybackSpeed();
+    // });
 }
 
 initGame();
