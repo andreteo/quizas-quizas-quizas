@@ -16,25 +16,48 @@
             <a class="navbar-brand" style="color: var(--text-color)">Home</a>
             <a class="btn btn-outline-dark mr-2" href="#">Home</a>
             <a class="btn btn-outline-dark mr-2" href="./scores.html">Scoreboard</a>
-            <a class="btn btn-outline-dark" id="playbutton">Audio</a>
+            <button class="btn btn-outline-dark" id="playbutton">Audio</button>
         </nav>
 
         <div class="center-screen">
             <div class="home" id="homescreen">
                 <div id="newgameheadingtext"></div>
-                <a class="homebuttons" id="newgame">New Game</a>
-                <a class="homebuttons" id="continue">Continue</a>
-                <a class="homebuttons" id="rules">Rules</a>
+                <button class="homebuttons align-items-center" id="newgame">New Game</button>
+                <button class="homebuttons align-items-center" id="continue">Continue</button>
+                <button class="homebuttons align-items-center" id="rules">Rules</button>
+            </div>
+
+            <div class="modal hidden" id="homemodal">
+                <div id="sometext"></div>
+                <!-- <a class="btn btn-success" id="start"> Close </a>
+                <a class="btn btn-danger" id="cancel"> Close </a> -->
+            </div>
+
+            <div class="modal-vertical hidden" id="playersignupmodal">
+                <form id="signup-form" class="p-4">
+                    <div class="mb-3">
+                        <label for="username" class="form-label h1 mb-5">New Game</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="username"
+                            placeholder="Enter your username"
+                            required />
+                    </div>
+                    <button class="btn btn-success" type="submit">Start!</button>
+                </form>
+            </div>
+
+            <div class="modal-rules hidden" id="ruleboard">
+                <div class="ruleboard-grid" id="ruleboardgrid"></div>
+                <div class="ruleboard-grid-buttons" id="rulesbtns">
+                    <button class="btn btn-outline-dark mr-2" id="rulesprev">Prev</button>
+                    <button class="btn btn-outline-dark mr-2" id="rulesnext">Next</button>
+                </div>
             </div>
         </div>
-
-        <div class="modal hidden" id="homemodal">
-            <div id="sometext"></div>
-            <!-- <a class="btn btn-success" id="start"> Close </a>
-            <a class="btn btn-danger" id="cancel"> Close </a> -->
-        </div>
         <div class="overlay hidden" id="homeoverlay"></div>
-
+        <script type="text/javascript" src="./docs/questionbank.json"></script>
         <script src="script.js"></script>
         <!-- <script src="class.js"></script> -->
     </body>

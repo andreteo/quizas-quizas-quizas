@@ -94,7 +94,7 @@ body {
     background-color: #bc4749;
 }
 
-/* New Game Modal Window */
+/* Home Modal Window */
 .modal {
     position: absolute;
     top: 50%;
@@ -145,9 +145,73 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
+    z-index: 1;
+}
+
+/* Player Sign Up Modal */
+.modal-vertical {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
     z-index: 5;
+    text-align: center; /* Center content horizontally */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ruleboard */
+.modal-rules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    /* min-height: 50%; */
+    max-height: 90vh;
+    /* overflow-y: auto; */
+    position: absolute;
+    width: 50%; /* Or any width you prefer */
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 5;
+}
+
+.ruleboard-grid {
+    display: grid;
+    /* grid-template-columns: repeat(5, 100px); */
+    grid-auto-rows: repeat(3, 100px);
+    gap: 1rem;
+}
+
+.ruleboard-grid-heading {
+    font-size: 2rem;
+}
+
+.ruleboard-grid-element {
+    font-size: 1rem;
+}
+
+.ruleboard-grid-buttons {
+    grid-area: 1/3/2/4;
+    justify-content: end;
 }
 
 .hidden {
     display: none;
+}
+/*
+    Error Messages
+*/
+
+.err {
+    color: red;
+    font-size: 1rem;
 }

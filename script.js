@@ -72,24 +72,99 @@ class Scoreboard {
     }
 }
 
-const toggleModal = function () {
-    if (homeModal.classList.contains("hidden")) {
-        homeModal.classList.remove("hidden");
+const toggleModal = function (element) {
+    if (element.classList.contains("hidden")) {
+        element.classList.remove("hidden");
         homeOverlay.classList.remove("hidden");
     } else {
-        homeModal.classList.add("hidden");
+        element.classList.add("hidden");
         homeOverlay.classList.add("hidden");
     }
 }
 
+
+/*
+    String/Input Manipulation
+*/
+const transform = (str, fn) => {
+    return fn(str);
+}
+
+const upperFirstLetter = (str) => {
+    const words = str.split(" ");
+    const capitalizedWords = words.map(word => {
+        if (!word) return word;
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+    return capitalizedWords.join(" ");
+};
+
+const allToLower = (str) => {
+    const words = str.split(" ");
+    const loweredWords = words.map(word => {
+        if (!word) return word;
+        return word.toLowerCase();
+    })
+    return loweredWords.join(" ");
+};
+
+const onlyAlphanumeriAndSpecialChar = (asciiChar) => {
+    return (0x21 <= asciiChar && asciiChar <= 0x7E);
+}
+
+const isValidName = (name) => {
+    let res = true;
+
+    if (!name) return false;
+
+    const words = name.split(" ");
+
+    for (const word of words) {
+        letters = word.split("");
+        const asciiLetters = letters.map(char => char.charCodeAt(0));
+        if (!asciiLetters.every(onlyAlphanumeriAndSpecialChar)) {
+            res = false;
+        }
+    }
+    return res;
+}
+
+
+// Set Title
+const TITLE = "Quiz-as, Quiz-as, Quiz-as!";
+document.querySelector("#newgameheadingtext").innerHTML = TITLE;
+document.querySelector("title").textContent = TITLE;
+
 const homeScreen = document.getElementById("homescreen");
 const homeModal = document.getElementById("homemodal");
+const rulesModal = document.getElementById("ruleboard");
+const rulesButtons = document.getElementById("rulesbtns");
+const newGameModal = document.getElementById("playersignupmodal");
 const homeOverlay = document.getElementById("homeoverlay");
+const backgroundMusic = new AudioPlayer();
+
+let curRulePage = 0;
+
+// rulesModal.innerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, modi, culpa quasi doloremque, harum totam et possimus laudantium vel porro neque. Incidunt libero commodi rerum, consequuntur itaque sapiente cumque officia.";
+const pages = [
+    `<div class="ruleboard-grid-heading">Quiz-as, Quiz-as, Quiz-as Rule Board</div>
+    <div class="ruleboard-grid-element">Welcome to our unique trivia game experience! Immerse yourself in a game where knowledge, speed, and music blend to create an unforgettable challenge. Read on to discover how to play, win, and enjoy the symphony of quiz mastery.</div>`,
+    `<div class="ruleboard-grid-heading">The Essence of the Game:</div>
+    <div class="ruleboard-grid-element">This is no ordinary trivia game. Your mission is to navigate through a series of questions, all while being serenaded by <a href="https://www.youtube.com/watch?v=xYz5CiEy5bY">Quiz-as, Quiz-as, Quiz-as</a>  by Andrea Bocelli.</div>`,
+    `<div class="ruleboard-grid-heading">Timing is Everything:</div>
+    <div class="ruleboard-grid-element">Forget the clock! In this game, time is measured by the duration of "Quiz-as, Quiz-as, Quiz-as." The song's duration is your countdown. Once the music starts, so does your challenge. Your goal? Answer all questions before the final note fades.</div>`,
+    `<div class="ruleboard-grid-heading">Listen and Learn:</div>
+    <div class="ruleboard-grid-element">With every question, the stakes get higher. A correct answer keeps the music at its original pace. However, Each mistake increases the playback speed of the song by 30%. The faster the music, the less time you have to think.</div>`,
+    `<div class="ruleboard-grid-heading">GLHF:</div>
+    <div class="ruleboard-grid-element">The ultimate goal is to answer all questions correctly before the song ends.</div>`,
+]
 
 /*
     Home Screen
 */
+
 homeScreen.addEventListener("click", function (e) {
+    e.preventDefault();
 
     const target = e.target;
     if (target.id === "homescreen" || target.id === "newgameheadingtext") {
@@ -100,65 +175,109 @@ homeScreen.addEventListener("click", function (e) {
 
     switch (target.id) {
         case "newgame": {
-            console.log("New Game pressed");
+            toggleModal(newGameModal);
             break;
         };
         case "rules": {
-            homeModal.innerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, modi, culpa quasi doloremque, harum totam et possimus laudantium vel porro neque. Incidunt libero commodi rerum, consequuntur itaque sapiente cumque officia.";
+            document.getElementById("ruleboardgrid").innerHTML = pages[curRulePage]
+            toggleModal(rulesModal);
             break;
         };
     }
-    homeModal.innerHTML = '<a class="btn btn-success" id="start">Close</a>' + '<a class="btn btn-danger" id="cancel"> Close </a>';
-    toggleModal();
+    // homeModal.innerHTML = '<a class="btn btn-success" id="start">Close</a>' + '<a class="btn btn-danger" id="cancel"> Close </a>';
+    // toggleModal(homeModal);
 })
+
+rulesButtons.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = e.target;
+
+    switch (target.id) {
+        case "rulesnext": {
+            console.log("next page clicked");
+            curRulePage += 1;
+            if (curRulePage > pages.length - 1) {
+                curRulePage = 0;
+            }
+            break;
+        }
+        case "rulesprev": {
+            console.log("prev page clicked");
+            curRulePage -= 1;
+            if (curRulePage < 0) {
+                curRulePage = pages.length - 1;
+            }
+            break;
+        }
+    }
+    document.getElementById("ruleboardgrid").innerHTML = pages[curRulePage];
+});
+
 
 /* 
     New Game Window
 */
-// <a class="btn btn-success" id="start"> Close </a>
-{/* <a class="btn btn-danger" id="cancel"> Close </a> */ }
+
 homeModal.addEventListener("click", function (e) {
     const target = e.target;
 
     switch (target.id) {
         case "start": {
             console.log("Start Button Clicked");
-            toggleModal();
+            toggleModal(newGameModal);
             break;
         };
         case "cancel": {
             console.log("Cancel Button Clicked");
-            toggleModal();
+            toggleModal(newGameModal);
             break;
         }
     }
 })
 
-function initGame() {
-    const TITLE = "Quiz-as, Quiz-as, Quiz-as!";
-    const newGameTitle = document.querySelector("#newgameheadingtext");
-    const backgroundMusic = new AudioPlayer();
-    const playButton = document.getElementById("playbutton");
+/*
+    Player Sign-up
+*/
 
-    newGameTitle.innerHTML = TITLE;
-    document.querySelector("title").textContent = TITLE;
+const getInput = () => {
+    return document.querySelector("#signup-form").username.value;;
+};
 
-    playButton.addEventListener("click", () => {
-        if (!backgroundMusic.isPlaying) {
-            backgroundMusic.playAudio();
-            playButton.style.backgroundColor = "#a7c957";
-        } else {
-            backgroundMusic.pauseAudio();
-            playButton.style.backgroundColor = "#bc4749";
+const validNameErr = document.createElement("div");
+validNameErr.setAttribute("id", "div-err");
+
+document.getElementById("signup-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const input = getInput();
+
+    const signUpEl = document.getElementById("signup-form");
+
+    // Manipulate input
+    const transformString = transform(input, allToLower);
+
+    // Validate input
+    if (!isValidName(transformString)) {
+        console.log(`Invalid name entered ${input}. Only alphanumeric/special chars`);
+        const errMsg = `Invalid Name ${input}`;
+        validNameErr.innerHTML = `<div class="err" id="inputerr">${errMsg}</div>`;
+        signUpEl.appendChild(validNameErr);
+    } else {
+        if (signUpEl.contains(validNameErr)) {
+            signUpEl.removeChild(validNameErr);
         }
-    })
 
-    // increasePlaybackBtn.addEventListener("click", () => {
-    //     backgroundMusic.increasePlaybackSpeed();
-    // });
-    // decreasePlaybackBtn.addEventListener("click", () => {
-    //     backgroundMusic.decreasePlaybackSpeed();
-    // });
+        if (!backgroundMusic.isPlaying) backgroundMusic.playAudio();
+        toggleModal(newGameModal);
+    }
+});
+
+const getQuestions = (topic) => {
+    // console.log(data.topic.questions)
+    return data[topic].questions;
 }
 
-initGame();
+const startGame = () => {
+    // Load Questions
+    const questionsObject = getQuestions("javascript");
+}
