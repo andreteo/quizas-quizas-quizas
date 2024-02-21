@@ -1,0 +1,116 @@
+const data = {
+    "javascript": {
+        "questions": [
+            {
+                "question": "Which is True about Javascript?",
+                "answers": [
+                    "JavaScript is a low-level programming language.",
+                    "JavaScript allows you to create interactive effects within web browsers.",
+                    "JavaScript is a markup language for web pages.",
+                    "JavaScript is a style sheet language used for specifying the presentation and styling of a document."
+                ],
+                "correct": 1
+            },
+            {
+                "question": "Which of the following is a primitive data type in JavaScript?",
+                "answers": ["Object", "Array", "String", "Function"],
+                "correct": 2
+            },
+            {
+                "question": "Which method is used to add new elements to the end of an array in JavaScript?",
+                "answers": ["push()", "concat()", "enqueue()", "add()"],
+                "correct": 0
+            },
+            {
+                "question": "What will the following JavaScript code output? const x; \n console.log(typeof x);",
+                "answers": ["undefined", "null", "SyntaxError", "string"],
+                "correct": 2
+            },
+            {
+                "question": "Which function returns a single boolean if every item passes the test",
+                "answers": ["Array.some()", "Array.find()", "Array.findIndex()", "Array.every()"],
+                "correct": 3
+            },
+            {
+                "question": "What is the output of the following code? \n console.log(5 + '5');",
+                "answers": ["\"10\"", "\"55\"", "10", "55"],
+                "correct": 1
+            },
+            {
+                "question": "What is the result of 10 == '10' in JavaScript?",
+                "answers": ["true", "false", "error", "NaN"],
+                "correct": 0
+            },
+            {
+                "question": "Which symbol is used for single-line comments in JavaScript?",
+                "answers": ["//", "#", "/*", "*/"],
+                "correct": 0
+            },
+            {
+                "question": "What will be logged to the console when the code is executed?\nconst arr = [1, 2, 3];\narr[5] = 45;\nconsole.log([...arr]);",
+                "answers": [
+                    "[1, 2, 3, undefined, undefined, 45]",
+                    "[1, 2, 3, undefined, 45]",
+                    "[1, 2, 3, NaN, Nan, 45]",
+                    "[1, 2, 3, null, null, 45]"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "Which built-in method removes the last element from an array and returns that element in JavaScript?",
+                "answers": ["pop()", "last()", "remove()", "delete()"],
+                "correct": 0
+            },
+            {
+                "question": "What will be logged to the console when the code is executed?\nlet chicken1 = \\\"chicken\\\";\\nlet var1 = chicken1;\\nvar1 = \\\"duck\\\";\\nconsole.log(chicken1);\\nconsole.log(var1);",
+                "answers": [
+                    "\"chicken\" and \"duck\"",
+                    "\"duck\" and \"chicken\"",
+                    "\"chicken\" and \"chicken\"",
+                    "\"duck\" and \"duck\""
+                ],
+                "correct": 1
+            },
+            {
+                "question": "What will be logged to the console when the code is executed?\nconst chicken2 = [1, 2, 3];\nconst duck = chicken2;\nduck[1] = 4;\n\n// You change one, the other is changed as well\nconsole.log(chicken2);\nconsole.log(duck);",
+                "answers": [
+                    "[1, 2, 3] and [1, 4, 3]",
+                    "[1, 4, 3] and [1, 4, 3]",
+                    "[1, 2, 3] and [1, 2, 4]",
+                    "[1, 2, 4] and [1, 2, 4]"
+                ],
+                "correct": 1
+            },
+            {
+                "question": "Which of the following is not a valid variable name in JavaScript?",
+                "answers": ["myVar", "my_var", "_var", "2var"],
+                "correct": 3
+            },
+            {
+                "question": "What will be logged to the console when the code is executed?\nconst shiftarr = [];\nshiftarr.shift(\"item2\");\nshiftarr.shift(\"item1\");\nconst arr3 = shiftarr.unshift();\nconsole.log(shiftarr);\nconsole.log(arr3);",
+                "answers": [
+                    "[\"item1\", \"item2\"] and 2",
+                    "[\"item1\"] and 1",
+                    "[\"item2\", \"item1\"] and 2",
+                    "[] and 0"
+                ],
+                "correct": 3
+            },
+            {
+                "question": "What is the result of the following expression in JavaScript? \n true + true;",
+                "answers": ["2", "true", "false", "NaN"],
+                "correct": 0
+            },
+            {
+                "question": "What will the following JavaScript code output? \n console.log(typeof NaN);",
+                "answers": ["\"number\"", "\"NaN\"", "\"undefined\"", "\"string\""],
+                "correct": 0
+            },
+            {
+                "question": "Which of the following is a valid way to declare a variable in JavaScript?",
+                "answers": ["let x;", "var y;", "const z = 5;", "All of the above."],
+                "correct": 3
+            }
+        ]
+    }
+}
