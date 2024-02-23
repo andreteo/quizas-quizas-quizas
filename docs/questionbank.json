@@ -1,4 +1,4 @@
-const data = {
+const questionbank = {
     "javascript": {
         "questions": [
             {
@@ -112,5 +112,33 @@ const data = {
                 "correct": 3
             }
         ]
-    }
+    },
+    "anotherTopic": {
+        "questions": [
+            {
+                "question": "How Are You?",
+                "answers": [
+                    "Good",
+                    "Meh",
+                    "Bad",
+                    "LMAO"
+                ],
+                "correct": 3
+            }
+        ]
+    },
+    "anotherTopic2": {
+        "questions": [
+            {
+                "question": "How Are You?",
+                "answers": [
+                    "Good",
+                    "Meh",
+                    "Bad",
+                    "LMAO"
+                ],
+                "correct": 3
+            }
+        ]
+    }       
 }

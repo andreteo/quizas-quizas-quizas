@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Quiz-as, Quiz-as, Quiz-as!</title>
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -13,17 +13,40 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light" id="nav" style="background-color: var(--background-color)">
-            <a class="navbar-brand" style="color: var(--text-color)">Home</a>
+            <a class="navbar-brand" style="color: var(--text-color)">Navbar</a>
             <a class="btn btn-outline-dark mr-2" href="#">Home</a>
-            <a class="btn btn-outline-dark mr-2" href="./scores.html">Scoreboard</a>
-            <button class="btn btn-outline-dark" id="playbutton">Audio</button>
+            <a class="btn btn-outline-dark mr-2" href="#scoreboard">Scoreboard</a>
         </nav>
+
+        <div class="video-container hidden" id="quizcontainer">
+            <div class="video-element element-1">
+                <div id="element-1-playername"></div>
+                <div id="element-1-currentplayback"></div>
+                <div id="element-1-correct"></div>
+                <div id="element-1-wrong"></div>
+                <div id="element-1-totalscore"></div>
+            </div>
+            <div class="video-element" id="element-2">
+                <div class="question-container" id="quizscreen">
+                    <div class="question-grid">
+                        <div class="question-heading" id="questionheading">child1</div>
+                        <div class="question-answer-container" id="q-container">
+                            <div class="btn btn-light" id="q1">q1</div>
+                            <div class="btn btn-light" id="q2">q2</div>
+                            <div class="btn btn-light" id="q3">q3</div>
+                            <div class="btn btn-light" id="q4">q4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="video-element"></div>
+        </div>
 
         <div class="center-screen">
             <div class="home" id="homescreen">
-                <div id="newgameheadingtext"></div>
+                <div id="newgameheadingtext">Quiz-as, Quiz-as, Quiz-as!</div>
                 <button class="homebuttons align-items-center" id="newgame">New Game</button>
-                <button class="homebuttons align-items-center" id="continue">Continue</button>
+                <button class="homebuttons align-items-center" id="testsound">Test Sound</button>
                 <button class="homebuttons align-items-center" id="rules">Rules</button>
             </div>
 
@@ -34,17 +57,14 @@
             </div>
 
             <div class="modal-vertical hidden" id="playersignupmodal">
-                <form id="signup-form" class="p-4">
-                    <div class="mb-3">
-                        <label for="username" class="form-label h1 mb-5">New Game</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="username"
-                            placeholder="Enter your username"
-                            required />
+                <form id="signup-container" class="p-4">
+                    <div class="mb-3" id="signup-form">
+                        <label for="username" class="form-label h1">New Game</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter your name" required />
+
+                        <button class="btn btn-success mt-2" type="button" id="startbtn">Start!</button>
                     </div>
-                    <button class="btn btn-success" type="submit">Start!</button>
+                    <div id="categories-container"></div>
                 </form>
             </div>
 
@@ -53,12 +73,21 @@
                 <div class="ruleboard-grid-buttons" id="rulesbtns">
                     <button class="btn btn-outline-dark mr-2" id="rulesprev">Prev</button>
                     <button class="btn btn-outline-dark mr-2" id="rulesnext">Next</button>
+                    <button class="btn btn-outline-danger mr-2" id="rulesclose">Close</button>
                 </div>
             </div>
+
+            <div class="modal-test-sound hidden" id="soundboard">
+                <button class="btn btn-danger mr-2" id="soundslow">Slower</button>
+                <button class="btn btn-warning mr-2" id="soundpause">Pause</button>
+                <button class="btn btn-success mr-2" id="soundfast">Faster</button>
+            </div>
         </div>
+
         <div class="overlay hidden" id="homeoverlay"></div>
         <script type="text/javascript" src="./docs/questionbank.json"></script>
         <script src="script.js"></script>
         <!-- <script src="class.js"></script> -->
+        <div id="scoreboard">This is where Scoreboard will go</div>
     </body>
 </html>
