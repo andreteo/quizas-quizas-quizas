@@ -268,8 +268,12 @@ body {
     Youtube Style Window?
 */
 .video-container {
+    display: flex;
+}
+
+.video-element {
     display: grid;
-    grid-template-rows: 10% 80% 2.5% 7.5%;
+    grid-template-rows: 10% 80% 10%;
     width: 80%;
     height: 70%;
     position: absolute;
@@ -282,23 +286,21 @@ body {
     background-color: var(--video-player-background);
     /* background-color: rgba(255, 255, 255, 0.15); */
     backdrop-filter: blur(5px);
-}
-
-.video-element {
-    border: 1px solid yellow;
     align-items: start;
+    font-size: 1rem;
+    padding: 10px 10px;
 }
 
 .element-1 {
     display: grid;
-    grid-template-columns: 250px 250px repeat(3, 150px);
+    grid-template-columns: repeat(5, auto);
+    /* grid-template-columns: 250px 250px repeat(3, 200px); */
     height: 100%;
     width: 100%;
     color: var(--video-player-icons);
     justify-content: start;
     align-content: center;
-    padding-left: 0;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 #element-1-playername {
@@ -384,6 +386,47 @@ body {
 #q4 {
     grid-area: 2/2/3/3;
     white-space: normal;
+}
+
+.end-video {
+    width: 150%;
+    height: 150%;
+    z-index: 15;
+}
+
+.end-video-background {
+    display: flex;
+    background-color: #000;
+    color: var(--video-player-icons);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.congrats {
+    position: absolute;
+    display: grid;
+    grid-template-rows: 20% 80%;
+    width: 70%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--border-color);
+    border-radius: 25px;
+}
+
+#congrats-heading {
+    grid-area: 1/1/2/2;
+    padding: 1rem 1rem;
+    align-self: center;
+}
+
+#congrats-message {
+    grid-area: 2/1/3/2;
+    align-self: start;
 }
 
 .hidden {

@@ -19,30 +19,43 @@
         </nav>
 
         <div class="video-container hidden" id="quizcontainer">
-            <div class="video-element element-1">
-                <div id="element-1-playername"></div>
-                <div id="element-1-currentplayback"></div>
-                <div id="element-1-correct"></div>
-                <div id="element-1-wrong"></div>
-                <div id="element-1-totalscore"></div>
-            </div>
-            <div class="video-element" id="element-2">
-                <div class="question-container" id="quizscreen">
-                    <div class="question-grid">
-                        <div class="question-heading" id="questionheading">child1</div>
-                        <div class="question-answer-container" id="q-container">
-                            <div class="btn btn-light" id="q1">q1</div>
-                            <div class="btn btn-light" id="q2">q2</div>
-                            <div class="btn btn-light" id="q3">q3</div>
-                            <div class="btn btn-light" id="q4">q4</div>
+            <div class="video-element">
+                <div class="element-1">
+                    <div id="element-1-playername"></div>
+                    <div id="element-1-currentplayback"></div>
+                    <div id="element-1-correct"></div>
+                    <div id="element-1-wrong"></div>
+                    <div id="element-1-totalscore"></div>
+                </div>
+                <div class="video-element" id="element-2">
+                    <div class="question-container" id="quizscreen">
+                        <div class="question-grid">
+                            <div class="question-heading" id="questionheading">child1</div>
+                            <div class="question-answer-container" id="q-container">
+                                <div class="btn btn-light" id="q1">q1</div>
+                                <div class="btn btn-light" id="q2">q2</div>
+                                <div class="btn btn-light" id="q3">q3</div>
+                                <div class="btn btn-light" id="q4">q4</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="video-element"></div>
         </div>
 
         <div class="center-screen">
+            <div class="congrats hidden" id="congrats-container">
+                <div class="h1" id="congrats-heading">🎉 Congrats! YOU'VE MADE IT. 🎉</div>
+                <div class="h3" id="congrats-message">placeholder</div>
+            </div>
+
+            <div class="end-video-background hidden" id="endBg">
+                <p class="h1">noob.</p>
+            </div>
+            <video class="end-video hidden" id="endVideo">
+                <source src="./sound/booms.mp4" type="video/mp4" />
+            </video>
+
             <div class="home" id="homescreen">
                 <div id="newgameheadingtext">Quiz-as, Quiz-as, Quiz-as!</div>
                 <button class="homebuttons align-items-center" id="newgame">New Game</button>

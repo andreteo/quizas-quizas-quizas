@@ -122,6 +122,7 @@ class QuestionMaster {
         this.elapsedTime = null;
         this.elapsedTime = 0;
         this.veryFirstQuestion = false;
+        this.endTheGame = false;
     }
 
     // flattenQuestions will push ALL questions and associated answers from only selected topics into a single array of question objects (e.g. [{question},{question}, ..., {question}])
@@ -180,6 +181,10 @@ class QuestionMaster {
             }
 
             this.curPage += 1;
+
+            if (this.curPage === this.subsetQuestions.length) {
+                this.endTheGame = true;
+            }
         }
 
         // if (!this.veryFirstQuestion) {
@@ -221,9 +226,18 @@ class QuestionMaster {
             document.getElementById(`q${this.correct + 1}`).style.backgroundColor = "green";
         }
 
-        setTimeout(() => {
-            this.populateQuizScreen();
-        }, 1000);
+        if (!this.endTheGame) {
+            setTimeout(() => {
+                this.populateQuizScreen();
+            }, 500);
+        } else {
+            [quizModal, homeScreen, congratsModal, homeOverlay].forEach(toggleModal);
+            document.getElementById("congrats-heading").innerText = `🎉 Congrats ${gameScores.currentPlayer.playerName}! YOU'VE MADE IT. 🎉`;
+            document.getElementById("congrats-message").innerText = `
+                Total Score ${gameScores.getTotalScore()}\nCorrect: ${gameScores.currentPlayer.numCorrect}\nWrong: ${gameScores.currentPlayer.numWrong}\n
+            `
+            backgroundMusic.pauseAudio();
+        }
     }
 
     toggleClickEventListeners(enable) {
@@ -378,23 +392,34 @@ let curRulePage = 0;
     HTML Elements
 */
 const homeScreen = document.getElementById("homescreen");
-const homeModal = document.getElementById("homemodal");
+// const homeModal = document.getElementById("homemodal");
 const rulesModal = document.getElementById("ruleboard");
 const rulesButtons = document.getElementById("rulesbtns");
 const newGameModal = document.getElementById("playersignupmodal");
 const homeOverlay = document.getElementById("homeoverlay");
 const soundModal = document.getElementById("soundboard");
 const quizModal = document.getElementById("quizcontainer");
+const congratsModal = document.getElementById("congrats-container");
 const backgroundMusic = new AudioPlayer();
-
 
 /* 
     Audio ends, action goes here
 */
+
+const endGameVideo = document.getElementById("endVideo");
+const endGameBg = document.getElementById("endBg");
+
 backgroundMusic.audio.addEventListener("ended", function () {
-    alert("audio ended");
+    toggleModal(endGameVideo);
+    endGameVideo.play();
+    [newGameModal, homeOverlay, rulesModal, homeScreen, quizModal].map((element) => element.classList.add("hidden"));
+
+    endGameVideo.addEventListener("ended", function () {
+        toggleModal(endGameBg);
+    })
     QM.stopTimer();
 })
+
 
 // Instantiate relevant classes
 const QM = new QuestionMaster(["javascript", "anotherTopic"], NUMQ, false);
