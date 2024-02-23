@@ -5,14 +5,16 @@
 
 # References
 
-| Category | Desc.                         | URL                                                                            |
-| -------- | ----------------------------- | ------------------------------------------------------------------------------ |
-| CSS      | Box Shadow Examples           | [Link](https://getcssscan.com/css-box-shadow-examples)                         |
-| CSS      | Color Palettes                | [Link](https://coolors.co/palette/dad7cd-a3b18a-588157-3a5a40-344e41)          |
-| CSS      | Bootstrap Documentation       | [Link](https://getbootstrap.com/docs/4.0/utilities/flex/#justify-content)      |
-| JS       | JS Audio Object               | [Link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)        |
-| JS       | Click Outside Element Example | [Link](https://www.30secondsofcode.org/js/s/listen-click-outside-event/)       |
-| JS       | How to Read JSON File         | [Link](https://www.freecodecamp.org/news/how-to-read-json-file-in-javascript/) |
+| Category | Desc.                                                              | URL                                                                                                        |
+| -------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| CSS      | Box Shadow Examples                                                | [Link](https://getcssscan.com/css-box-shadow-examples)                                                     |
+| CSS      | Color Palettes                                                     | [Link](https://coolors.co/palette/dad7cd-a3b18a-588157-3a5a40-344e41)                                      |
+| CSS      | Bootstrap Documentation                                            | [Link](https://getbootstrap.com/docs/4.0/utilities/flex/#justify-content)                                  |
+| JS       | JS Audio Object                                                    | [Link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)                                    |
+| JS       | Click Outside Element Example                                      | [Link](https://www.30secondsofcode.org/js/s/listen-click-outside-event/)                                   |
+| JS       | How to Read JSON File                                              | [Link](https://www.freecodecamp.org/news/how-to-read-json-file-in-javascript/)                             |
+| JS       | How to Shuffle an Array                                            | [Link](https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/) |
+| JS       | If Background is Dark {textColour = #fff} else {textColour = #000} | chatGPT                                                                                                    |
 
 ## ChatGPT
 
