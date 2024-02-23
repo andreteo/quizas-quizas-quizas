@@ -9,6 +9,8 @@
     --video-slider-buffer: #cfcdce;
     --video-player-background: #333333;
     --video-player-icons: #fafefd;
+    --frosted-glass: rgba(0, 0, 0, 0.35);
+    --frosted-white: rgba(255, 255, 255, 0.35);
 }
 
 * {
@@ -28,14 +30,16 @@
 body {
     font-family: "Roboto", sans-serif;
     color: var(--text-color);
-    background-color: var(--background-color);
+    /* background-color: var(--background-color); */
+    background-image: url("/media/bg.jpg");
+    background-size: cover;
+    background-position-x: left 50%;
 }
 
 .center-screen {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    text-align: center;
     min-height: 100vh;
 }
 
@@ -44,34 +48,34 @@ body {
 .home {
     display: grid;
     grid-template-columns: repeat(3, 30%);
-    grid-auto-rows: repeat(2, 30%);
+    grid-auto-rows: repeat(2, 200px);
     gap: 1rem;
-    width: 50%;
-    border-radius: 20px;
-    padding: 2rem;
+    height: 325px;
+    width: 55%;
+    border-radius: 1rem;
+    padding: 1rem;
     justify-content: center;
-    background-color: var(--secondary-color);
-    /* border: 1px solid var(--border-color); */
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    align-self: center;
+    border: 0.2rem solid #fff;
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #0b7bfb, 0 0 0.8rem #0b7bfb, 0 0 2.8rem #0b7bfb,
+        inset 0 0 1.3rem #0b7bfb;
 }
 
 .homebuttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border-radius: 20px;
-    /* border: 1px solid var(--border-color); */
-    color: var(--text-color);
     justify-content: center;
     align-content: center;
     font-size: 2rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: lightgray;
+    border: 1px solid #0b7bfb;
+    background-color: var(--frosted-glass);
 }
 
 #newgameheadingtext {
     grid-area: 1/1/1/4;
     font-size: 3rem;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 #newgame {
@@ -79,7 +83,7 @@ body {
 }
 
 #newgame:hover {
-    background-color: #a7c957;
+    background-color: #10253c;
 }
 
 #continue {
@@ -87,7 +91,7 @@ body {
 }
 
 #continue:hover {
-    background-color: #34a0a4;
+    background-color: #10253c;
 }
 
 #rules {
@@ -95,7 +99,7 @@ body {
 }
 
 #rules:hover {
-    background-color: #f2e8cf;
+    background-color: #10253c;
 }
 
 #playbutton {
@@ -103,7 +107,7 @@ body {
 }
 
 #testsound:hover {
-    background-color: aquamarine;
+    background-color: #10253c;
 }
 
 /* Home Modal Window */
@@ -273,7 +277,7 @@ body {
 
 .video-element {
     display: grid;
-    grid-template-rows: 10% 80% 10%;
+    grid-template-rows: 10% 90%;
     width: 80%;
     height: 70%;
     position: absolute;
@@ -297,9 +301,10 @@ body {
     /* grid-template-columns: 250px 250px repeat(3, 200px); */
     height: 100%;
     width: 100%;
+    gap: 1rem;
     color: var(--video-player-icons);
     justify-content: start;
-    align-content: center;
+    align-content: start;
     font-size: 1.5rem;
 }
 
@@ -328,6 +333,8 @@ body {
 }
 
 #element-2 {
+    height: 100%;
+    width: 100%;
     color: var(--video-player-icons);
     justify-content: start;
     align-content: start;
@@ -342,11 +349,11 @@ body {
 
 .question-grid {
     display: grid;
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(8, 30px);
 }
 
 .question-heading {
-    grid-area: 1/1/2/2;
+    grid-area: 1/1/7/2;
     display: flex;
     height: 100%;
     flex-direction: row;
@@ -354,7 +361,7 @@ body {
 }
 
 .question-answers {
-    grid-area: 2/1/3/2;
+    grid-area: 7/1/8/2;
     display: flex;
     flex-direction: row;
     /* grid-template-columns: repeat(2, 50px);
@@ -362,9 +369,9 @@ body {
 }
 .question-answer-container {
     display: grid;
-    grid-template-columns: repeat(2);
-    grid-template-rows: repeat(2);
-    margin: 10px;
+    height: 100%;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
     gap: 10px;
 }
 
@@ -389,9 +396,11 @@ body {
 }
 
 .end-video {
-    width: 150%;
-    height: 150%;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
     z-index: 15;
+    object-fit: fill;
 }
 
 .end-video-background {
@@ -416,6 +425,7 @@ body {
     align-items: center;
     background-color: var(--border-color);
     border-radius: 25px;
+    padding-top: 1rem;
 }
 
 #congrats-heading {
@@ -431,4 +441,16 @@ body {
 
 .hidden {
     display: none;
+}
+
+.neonText {
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0b7bfb, 0 0 80px #0b7bfb, 0 0 90px #0b7bfb,
+        0 0 100px #0b7bfb, 0 0 150px #0b7bfb;
+}
+
+.neonTextPink {
+    color: #fff;
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe, 0 0 45px #bc13fe, 0 0 55px #bc13fe,
+        0 0 70px #bc13fe, 0 0 80px #bc13fe;
 }

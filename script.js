@@ -1,7 +1,7 @@
 const NUMQ = 10;
 
 class AudioPlayer {
-    constructor(audio = "./sound/Andrea-Bocelli_Quizas,Quizas,Quizas_ft.-Jennifer-Lopez.mp3", timeElapsed = 0.0, isPlaying = false, playbackSpeed = 1.0, speedup = SPEEDUP) {
+    constructor(audio = "./media/Andrea-Bocelli_Quizas,Quizas,Quizas_ft.-Jennifer-Lopez.mp3", timeElapsed = 0.0, isPlaying = false, playbackSpeed = 1.0, speedup = SPEEDUP) {
         this.audio = new Audio(audio);
         this.timeElapsed = timeElapsed;
         this.isPlaying = isPlaying;
@@ -187,10 +187,6 @@ class QuestionMaster {
             }
         }
 
-        // if (!this.veryFirstQuestion) {
-        //     this.startTimer();
-        // }
-
         this.veryFirstQuestion = true;
         this.updateQuizScores();
     }
@@ -231,7 +227,7 @@ class QuestionMaster {
                 this.populateQuizScreen();
             }, 500);
         } else {
-            [quizModal, homeScreen, congratsModal, homeOverlay].forEach(toggleModal);
+            [homeScreen, congratsModal, homeOverlay, quizModal].forEach(toggleModal);
             document.getElementById("congrats-heading").innerText = `🎉 Congrats ${gameScores.currentPlayer.playerName}! YOU'VE MADE IT. 🎉`;
             document.getElementById("congrats-message").innerText = `
                 Total Score ${gameScores.getTotalScore()}\nCorrect: ${gameScores.currentPlayer.numCorrect}\nWrong: ${gameScores.currentPlayer.numWrong}\n
@@ -412,7 +408,7 @@ const endGameBg = document.getElementById("endBg");
 backgroundMusic.audio.addEventListener("ended", function () {
     toggleModal(endGameVideo);
     endGameVideo.play();
-    [newGameModal, homeOverlay, rulesModal, homeScreen, quizModal].map((element) => element.classList.add("hidden"));
+    [newGameModal, homeOverlay, rulesModal, homeScreen, soundModal].map((element) => element.classList.add("hidden"));
 
     endGameVideo.addEventListener("ended", function () {
         toggleModal(endGameBg);
@@ -422,7 +418,7 @@ backgroundMusic.audio.addEventListener("ended", function () {
 
 
 // Instantiate relevant classes
-const QM = new QuestionMaster(["javascript", "anotherTopic"], NUMQ, false);
+const QM = new QuestionMaster(["javascript"], NUMQ, false);
 const gameScores = new Scoreboard();
 
 const pages = [

@@ -12,10 +12,10 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light" id="nav" style="background-color: var(--background-color)">
-            <a class="navbar-brand" style="color: var(--text-color)">Navbar</a>
-            <a class="btn btn-outline-dark mr-2" href="#">Home</a>
-            <a class="btn btn-outline-dark mr-2" href="#scoreboard">Scoreboard</a>
+        <nav class="navbar navbar-expand-lg navbar-dark" id="nav" style="background-color: var(--frosted-glass)">
+            <a class="navbar-brand" style="color: #fff">Navbar</a>
+            <a class="btn btn-outline-light mr-2" href="#">Home</a>
+            <a class="btn btn-outline-light mr-2" href="#scoreboard">Scoreboard</a>
         </nav>
 
         <div class="video-container hidden" id="quizcontainer">
@@ -27,16 +27,14 @@
                     <div id="element-1-wrong"></div>
                     <div id="element-1-totalscore"></div>
                 </div>
-                <div class="video-element" id="element-2">
-                    <div class="question-container" id="quizscreen">
-                        <div class="question-grid">
-                            <div class="question-heading" id="questionheading">child1</div>
-                            <div class="question-answer-container" id="q-container">
-                                <div class="btn btn-light" id="q1">q1</div>
-                                <div class="btn btn-light" id="q2">q2</div>
-                                <div class="btn btn-light" id="q3">q3</div>
-                                <div class="btn btn-light" id="q4">q4</div>
-                            </div>
+                <div id="element-2">
+                    <div class="question-grid">
+                        <div class="question-heading" id="questionheading">child1</div>
+                        <div class="question-answer-container" id="q-container">
+                            <div class="btn btn-light" id="q1">q1</div>
+                            <div class="btn btn-light" id="q2">q2</div>
+                            <div class="btn btn-light" id="q3">q3</div>
+                            <div class="btn btn-light" id="q4">q4</div>
                         </div>
                     </div>
                 </div>
@@ -53,20 +51,14 @@
                 <p class="h1">noob.</p>
             </div>
             <video class="end-video hidden" id="endVideo">
-                <source src="./sound/booms.mp4" type="video/mp4" />
+                <source src="./media/booms.mp4" type="video/mp4" />
             </video>
 
             <div class="home" id="homescreen">
-                <div id="newgameheadingtext">Quiz-as, Quiz-as, Quiz-as!</div>
-                <button class="homebuttons align-items-center" id="newgame">New Game</button>
-                <button class="homebuttons align-items-center" id="testsound">Test Sound</button>
-                <button class="homebuttons align-items-center" id="rules">Rules</button>
-            </div>
-
-            <div class="modal hidden" id="homemodal">
-                <div id="sometext"></div>
-                <!-- <a class="btn btn-success" id="start"> Close </a>
-                <a class="btn btn-danger" id="cancel"> Close </a> -->
+                <div class="neonTextPink" id="newgameheadingtext">Quiz-as, Quiz-as, Quiz-as!</div>
+                <button class="homebuttons align-items-center neonTextPink" id="newgame">New Game</button>
+                <button class="homebuttons align-items-center neonTextPink" id="testsound">Test Sound</button>
+                <button class="homebuttons align-items-center neonTextPink" id="rules">Rules</button>
             </div>
 
             <div class="modal-vertical hidden" id="playersignupmodal">
