@@ -154,7 +154,9 @@ body {
 #rules:hover,
 #testsound:hover {
     background-color: #bc13fe;
-    color: var(--quiz-bg);
+    color: var(--default-text);
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--pink), 0 0 0.8rem var(--pink), 0 0 2.8rem var(--pink),
+        inset 0 0 1.3rem var(--pink);
 }
 
 /* Home Modal Window */
@@ -180,8 +182,10 @@ body {
 }
 
 #startbtn:hover {
-    background-color: var(--yellow);
+    background-color: var(--default-text);
     color: var(--quiz-bg);
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--yellow), 0 0 0.8rem var(--yellow),
+        0 0 2.8rem var(--yellow), inset 0 0 1.3rem var(--yellow);
 }
 
 #signup-container {
@@ -254,6 +258,8 @@ body {
 #rulesclose:hover {
     background-color: var(--green);
     color: var(--quiz-bg);
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--green), 0 0 0.8rem var(--green),
+        0 0 2.8rem var(--green), inset 0 0 1.3rem var(--green);
 }
 
 /*
@@ -291,6 +297,8 @@ body {
 #soundfast:hover {
     background-color: var(--blue);
     color: var(--default-text);
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--blue), 0 0 0.8rem var(--blue), 0 0 2.8rem var(--blue),
+        inset 0 0 1.3rem var(--blue);
 }
 
 /*
@@ -298,22 +306,23 @@ body {
 */
 .video-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .video-element {
     display: grid;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 10% auto;
     width: 80%;
-    height: 70%;
+    height: 40%;
     position: absolute;
-    border-radius: 15px;
+    border-radius: 1rem;
     z-index: 10;
     background-color: var(--quiz-bg);
     backdrop-filter: blur(5px);
-    align-items: start;
     font-size: 1rem;
     padding: 10px 10px;
+    justify-content: center;
+    align-content: start;
 }
 
 .element-1 {
@@ -359,8 +368,6 @@ body {
 }
 
 #element-2 {
-    height: 100%;
-    width: 100%;
     color: var(--default-text);
     justify-content: start;
     align-content: start;
@@ -401,9 +408,8 @@ body {
     gap: 10px;
 }
 
-#q1 {
-    grid-area: 1/1/2/2;
-    white-space: normal;
+.q-btn {
+    border: 2px solid var(--red);
 }
 
 #q1:hover,
@@ -412,6 +418,13 @@ body {
 #q4:hover {
     background-color: var(--red);
     color: var(--quiz-bg);
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--red), 0 0 0.8rem var(--red), 0 0 2.8rem var(--red),
+        inset 0 0 1.3rem var(--red);
+}
+
+#q1 {
+    grid-area: 1/1/2/2;
+    white-space: normal;
 }
 
 #q2 {
