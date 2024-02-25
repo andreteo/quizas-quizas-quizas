@@ -321,8 +321,6 @@ getTextContrastColour = (hexValue) => {
     String/Input Manipulation
 */
 const getInput = () => {
-    // return document.querySelector("#signup-form").username.value;
-    // return document.querySelector("#signup-form").username;
     return document.querySelector("#username").value;
 };
 
