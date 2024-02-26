@@ -38,7 +38,7 @@
 body {
     font-family: "Roboto", sans-serif;
     color: var(--default-text);
-    background-image: url("media/bg.jpg");
+    background-image: url("../media/bg.jpg");
     background-size: cover;
     background-position-x: left 50%;
 }
