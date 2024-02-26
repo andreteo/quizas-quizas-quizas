@@ -223,7 +223,7 @@ class QuestionMaster {
         if (!this.endTheGame) {
             setTimeout(() => {
                 this.populateQuizScreen();
-            }, 500);
+            }, 250);
         } else {
             [homeScreen, congratsModal, homeOverlay, quizModal].forEach(toggleModal);
             document.getElementById("congrats-heading").innerText = `🎉 Congrats ${gameScores.currentPlayer.playerName}! YOU'VE MADE IT. 🎉`;

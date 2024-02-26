@@ -103,14 +103,74 @@ const questionbank = {
             },
             {
                 "question": "What will the following JavaScript code output? \n console.log(typeof NaN);",
-                "answers": ["\"number\"", "\"NaN\"", "\"undefined\"", "\"string\""],
+                "answers": ["number", "NaN", "undefined", "string"],
                 "correct": 0
             },
             {
                 "question": "Which of the following is a valid way to declare a variable in JavaScript?",
                 "answers": ["let x;", "var y;", "const z = 5;", "All of the above."],
                 "correct": 3
-            }
+            },
+            {
+                "question": "What does the '===' operator do in JavaScript?",
+                "answers": [
+                  "Checks for equality of values and types",
+                  "Assigns a value to a variable",
+                  "Checks for equality of values only",
+                  "Performs a bitwise comparison"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "Which built-in method returns the length of a string?",
+                "answers": [
+                  "someString.length",
+                  "len(someString)",
+                  "getLength(someString)",
+                  "Use a Ruler"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "Which function is used to parse a string and return an integer in JavaScript?",
+                "answers": [
+                  "parseInt()",
+                  "parseFloat()",
+                  "parseIntValue()",
+                  "None of the above"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "What does 'this' keyword refer to in JavaScript?",
+                "answers": [
+                  "Reference to the current function",
+                  "Reference to the current object",
+                  "Reference to a parent object",
+                  "Reference to a global object",
+                ],
+                "correct": 1
+            },
+            {
+                "question": "What is the correct syntax for an IF statement for executing the following expression:\n'i' is NOT equal to 5",
+                "answers": [
+                  "if (i != 5)",
+                  "if (i !== 5)",
+                  "if i is not 5",
+                  "if i =! 5"
+                ],
+                "correct": 1
+            },
+            {
+                "question": "What is the result of 10 % 3 in JavaScript?",
+                "answers": [
+                  "3",
+                  "0.1",
+                  "10",
+                  "1"
+                ],
+                "correct": 3
+            },
         ]
     }      
 }
