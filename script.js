@@ -36,6 +36,7 @@ const endGameBg = document.getElementById("endBg");
 backgroundMusic.audio.addEventListener("ended", function () {
     toggleModal(endGameVideo);
     endGameVideo.play();
+
     [newGameModal, homeOverlay, rulesModal, homeScreen, soundModal].map((element) => element.classList.add("hidden"));
 
     endGameVideo.addEventListener("ended", function () {
