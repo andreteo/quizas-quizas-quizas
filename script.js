@@ -190,13 +190,24 @@ soundModal.addEventListener("click", function (e) {
             break;
         };
         case "soundpause": {
-            backgroundMusic.pauseAudio();
+            if (backgroundMusic.isPlaying) {
+                document.getElementById("soundpause").textContent = "Resume";
+                backgroundMusic.pauseAudio();
+            } else {
+                document.getElementById("soundpause").textContent = "Pause";
+                backgroundMusic.playAudio();
+            }
             break;
         };
         case "soundfast": {
             backgroundMusic.increasePlaybackSpeed();
             break
         };
+        case "soundcancel": {
+            backgroundMusic.resetAudio();
+            toggleModal(soundModal);
+            break;
+        }
     }
 
     document.getElementById("test-sound-cur-speed").innerText = `Current Playbackspeed: ${backgroundMusic.playbackSpeed}`;

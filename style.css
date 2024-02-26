@@ -277,7 +277,7 @@ body {
     position: absolute;
     display: grid;
     grid-template-rows: repeat(3, 50px);
-    width: 30%;
+    width: 40%;
     padding: 2rem;
     border-radius: 10px;
     align-items: center;
@@ -298,6 +298,14 @@ body {
     color: var(--default-text);
     box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--blue), 0 0 0.8rem var(--blue), 0 0 2.8rem var(--blue),
         inset 0 0 1.3rem var(--blue);
+}
+
+#soundcancel:hover {
+    background-color: var(--red);
+    color: var(--quiz-bg);
+    border: #fff;
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--red), 0 0 0.8rem var(--red), 0 0 2.8rem var(--red),
+        inset 0 0 1.3rem var(--red);
 }
 
 /*

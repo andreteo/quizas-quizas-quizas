@@ -24,7 +24,10 @@ class AudioPlayer {
 
     resetAudio() {
         this.pauseAudio();
-        this.timeElapsed = 0;
+        this.audio.currentTime = 0;
+        this.elapsedTime = this.audio.currentTime;
+        this.audio.playbackRate = 1;
+        this.playbackSpeed = this.audio.playbackRate
         console.log("Audio is reset to the start");
     };
 
