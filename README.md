@@ -1,23 +1,270 @@
-## Modularization
+# Quiz-as, Quiz-as, Quiz-as!
 
--   Entry Point - script.js
-    -   Classes - class.js
+## Description
+
+Welcome to _Quiz-as, Quiz-as, Quiz-as_. It is a web-based trivia game that not only challenges players' knowledge, but also their speed and steadfastness in the face of a ticking clock. In _Quiz-as, Quiz-as, Quiz-as_, players find themselves immersed in an increasingly fast-paced trivia adventure where every second counts.
+
+Forget the clock! In this game, time is measured by the duration of [_Quizas, Quizas, Quizas_](https://www.youtube.com/watch?v=xYz5CiEy5bY) by Andrea Boccelli song duration. . Answer all questions before the final note fades.
+
+## Overview
+
+### Key Features
+
+-   Users can explore a range of quiz topics. (Currently only has Javascript, but it's simple to add more topics to the .json file in the future).
+-   Dynamically timed gameply: Users are pitched against the clock to finish all questions before time runs out. The catch is, every wrong answer entered increases the playback rate. The more mistakes made, the less time the user has to complete.
+-   Randomized questions: A set number of questions from a chosen list of categories is randomly selected from a pool of questions from the questions.json file.
+-   _(To be implemented)_ Scoreboard - Players' scores will be recorded after every game and saved in a scoreboard. They must race to answer all questions correctly as quickly as possible for a spot in the top.
+
+### Screenshots
+
+| ![Landing Page](/media/main-page.png)                                                                                                                                                                                                          |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <strong><span style="color: #0b7bfb">Main Landing Page</span></strong><br>Shows the Navbar with two options - Home and Scoreboard. Home takes you to the main landing page as seen below, while Scoreboard will take you to a scoreboard page. |
+
+| ![Rules Button](/media/ruleboard.png)                                                                                                                                                                                                                                    |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <strong><span style="color: #98ecae">Rules</strong></span><br>Like every new player, to get a good understanding of the game, they'd first take a look at the game rules. The _Rules_ button is clicked where the user will be briefed clearly on the rules of the game. |
+
+| ![Test Sound Button](/media/test-sound.png)                                                                                                                                                                                                                                                                                    |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <strong><span style="color: #0b7bfb">Test Sound</span></strong><br>This button simply allows the user to preview [_Quizas, Quizas, Quizas_](https://www.youtube.com/watch?v=xYz5CiEy5bY) and have a listen before starting the actual game. The user is also able to increase/decrease the playback rate for testing purposes. |
+
+| ![New Game Button](/media/new-game.png)                                                                                                                                                                                                                                                                          |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <strong><span style="color: #f4f966">New Game</span></strong><br>To start the game, players will click on the _New Game_ button, after which a _New Game Modal_ will pop up and prompt them to enter a name, and choose the desired categories. Once completed, the _Start!_ button is clicked to begin the game |
+
+| ![Quiz Board](/media/quiz-board.png)                                                                                                                                                                                                                                                                                                                           |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <strong><span style="color: #e195af">Quiz Board</span></strong><br> Once the _Start!_ button is clicked, the player is taken to the main game (Quiz) board, and the song starts playing. This is where players will answer a series of questions. The number of questions is configurable (See Section _Configuration_). This page has two outcomes: Win/Lose. |
+
+| ![Player Won Screen](/media/win.png)                                                                                                                                                                                                                                                                                                                               |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <strong><span style="color: #0b7bfb"> Player Successful Completion</span></strong><br> This page is shown when the player has successfully completed the quiz, by which all questions have been answered before the end of the song. It doesn't matter if the player has only 1 question correct or not. It appears as long as they complete before the song ends. |
+
+| ![Player Lose Screen](/media/lose.png)                                                                                                                                                                   |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <strong><span style="color: #d07214"> Player Unsuccessful </span></strong><br> This page is shown when the player is unsuccessful and does not manage to answer all quiz questions before the song ends. |
+
+## Installation
+
+### Pre-requisites
+
+Currently this game is deployed locally. The pre-requisites are as follows:
+
+-   Access to the [Repository](https://github.com/andreteo/quizas-quizas-quizas.git). It's public, shouldn't be an issue.
+-   Git
+-   VSCode
+    -   Extension: Live Server (Extension ID: ritwickdey.LiveServer)
+    -   Extension: Prettier (Extension ID: esbenp.prettier-vscode)
+
+To get started with _Quiz-as, Quiz-as, Quiz-as_, follow the steps below:
+
+1. Clone the repository to your local machine using Git:
+
+```bash
+https://github.com/andreteo/quizas-quizas-quizas.git
+```
+
+2. Navigate to the Project Directory. Change into the directory where you cloned _Quiz-as, Quiz-as, Quiz-as_.
+
+```bash
+cd ~/quizas-quizas-quizas
+```
+
+3. Open the project directory in VSCode from terminal:
+
+```bash
+code .
+```
+
+## Usage
+
+1. Start _Quiz-as, Quiz-as, Quiz-as_ locally using Live Server.
+
+-   With Live Server installed, click _Go Live_ at the bottom-right of VSCode.
+    ![Go Live](/media/server-not-started.png)
+-   After starting the server, a window should automatically open in your default browser and the _Go Live_ now shows the port number of the local server. Otherwise, you can manually open the page by entering `http://localhost:<portnumber>` in your browser.
+    ![Server Started](/media/server-started.png)
+
+## Configuration
+
+-   <strong>Song playback rate</strong> can be changed in the source code ./script.js. This increases/decreases the playback rate which is initialized to a value of 1.0 by simply adding/subtracting the input value. The actual value is changed within the AudioPlayer class in class.js file.
+
+    <span style="color: gray">script.js</span>
+
+    ```js
+    const SPEEDUP = 1.0;
+    ```
+
+    <span style="color: gray">class.js - Increase Playback Speed</span>
+
+    ```js
+    const newSpeed = this.playbackSpeed + this.speedup;
+    this.playbackSpeed = Math.round(newSpeed * 100) / 100;
+    ```
+
+    <span style="color: gray">class.js - Decrease Playback Speed</span>
+
+    ```js
+    const newSpeed = this.playbackSpeed - this.speedup;
+    this.playbackSpeed = Math.round(newSpeed * 100) / 100;
+    ```
+
+-   <strong>Number of questions</strong> is set using `NUMQ` global variable in script.js. This determined the total number of questions that will be randomly sampled. Obviously, the number of questions in your questions.json file must be >= `NUMQ`.
+
+    ```js
+    const NUMQ = 10;
+    ```
+
+-   <strong>Question bank file</strong> is imported in not in .js file but in .html as a `<script></script>`. You can specify a variable name and reference that in your actual .js file
+
+    ```html
+    <script type="text/javascript" src="./docs/questionbank.json"></script>
+    ```
+
+    ```js
+    fetchQuestions() {
+        this.allQuestions = this.flattenQuestions(questionbank);
+    }
+    ```
+
+-   <strong>Background song file</strong> is defined as a default value in the AudioPlayer's class' constructor. This can be changed should you want to have a different background song. The song file is kept in ./media/
+
+    ```js
+    class AudioPlayer {
+        constructor(
+            audio = "./media/Andrea-Bocelli_Quizas,Quizas,Quizas_ft.-Jennifer-Lopez.mp3",
+            timeElapsed = 0.0,
+            isPlaying = false,
+            playbackSpeed = 1.0,
+            speedup = SPEEDUP
+        ) {
+            this.audio = new Audio(audio);
+            this.timeElapsed = timeElapsed;
+            this.isPlaying = isPlaying;
+            this.playbackSpeed = playbackSpeed;
+            this.speedup = speedup;
+        }
+    }
+    ```
+
+## Data Structure of Question Bank
+
+The question bank is organized as a JavaScript object named `questionbank`. It can consist of multiple topics, each containing an array of questions related to that topic.
+
+```json
+const questionbank = {
+  "topic1": {
+    "questions": [
+      {
+        "question": "question1",
+        "answers": [
+          "answer1",
+          "answer2",
+          "answer3",
+          "answer4"
+        ],
+        "correct": 2
+      },
+      {
+        "question": "question2",
+        "answers": [
+          "answer1",
+          "answer2",
+          "answer3",
+          "answer4"
+        ],
+        "correct": 3
+      }
+    ]
+  }
+}
+```
+
+### Structure Explanation:
+
+-   **`questionbank`**: This is the main object that contains all the topics and their associated questions.
+
+-   **Topics**: Each topic within the `questionbank` object is represented as a key-value pair, where the key is the name of the topic (e.g., `"topic1"`), and the value is an object containing the questions related to that topic.
+
+-   **Questions Array**: Inside each topic object, there's a key named `"questions"`, which holds an array of question objects. Each question object represents a single question and its details.
+
+-   **Question Object**: Each question object contains the following properties:
+    -   **`question`**: The actual question text.
+    -   **`answers`**: An array of 4 possible answers to the question.
+    -   **`correct`**: The index of the correct answer within the `answers` array. As with Javascript notation, the index starts from 0.
+
+### Example:
+
+-   For the `"topic1"` topic:
+    -   It contains an array of two questions.
+    -   The first question's (`question1`) correct answer is at index 2 (`"answer3"`).
+    -   The second question's (`question2`) correct answer is at index 3 (`"answer4"`).
+
+This structure allows for easy organization and retrieval of questions based on different topics, making it convenient for users to manage and access quiz content in the _Quiz-as, Quiz-as, Quiz-as_ application.
+
+## File Structure
+
+```bash
+.
+├── README.md
+├── class.js
+├── docs
+├── fonts
+├── index.html
+├── media
+├── script.js
+└── style.css
+```
+
+### Documentation
+
+`Dir: ./docs`<br>
+Documentation such as wireframes and question bank .json files are stored here.
+
+### Fonts
+
+`Dir: ./fonts`<br>
+Downloaded font files. Usage of local font files are as follows:
+
+```css
+@font-face {
+    font-family: "Roboto", sans-serif;
+    src: url("fonts/Roboto-Regular.ttf") format("truetype");
+}
+```
+
+### Media
+
+`Dir: ./media`<br>
+Media files including audio .mp3, videos .mp4, and screenshots .png.
+
+### Source Code
+
+| File      | Type | Desc                                      |
+| --------- | ---- | ----------------------------------------- |
+| script.js | JS   | Main entry point                          |
+| class.js  | JS   | Classes are declared and initialized here |
+| style.css | CSS  | Styling document                          |
 
 # References
 
-| Category | Desc.                                                              | URL                                                                                                        |
-| -------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
-| CSS      | Box Shadow Examples                                                | [Link](https://getcssscan.com/css-box-shadow-examples)                                                     |
-| CSS      | Color Palettes                                                     | [Link](https://coolors.co/palette/dad7cd-a3b18a-588157-3a5a40-344e41)                                      |
-| CSS      | Bootstrap Documentation                                            | [Link](https://getbootstrap.com/docs/4.0/utilities/flex/#justify-content)                                  |
-| CSS      | Neon Text                                                          | [Link](https://codepen.io/silvia-odwyer/pen/RwKMOpb)                                                       |
-| JS       | JS Audio Object                                                    | [Link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)                                    |
-| JS       | Click Outside Element Example                                      | [Link](https://www.30secondsofcode.org/js/s/listen-click-outside-event/)                                   |
-| JS       | How to Read JSON File                                              | [Link](https://www.freecodecamp.org/news/how-to-read-json-file-in-javascript/)                             |
-| JS       | How to Shuffle an Array                                            | [Link](https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/) |
-| JS       | If Background is Dark {textColour = #fff} else {textColour = #000} | chatGPT                                                                                                    |
+| Category | Desc.                                                              | URL                                                                                                                                                    |
+| -------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| HTML     | Main Trivia Background Image                                       | [Link](https://www.freepik.com/free-vector/neon-blue-quotation-frame-with-text-space_12320014.htm?query=trivia%20background#from_view=detail_alsolike) |
+| CSS      | Box Shadow Examples                                                | [Link](https://getcssscan.com/css-box-shadow-examples)                                                                                                 |
+| CSS      | Color Palettes                                                     | [Link](https://coolors.co/palette/dad7cd-a3b18a-588157-3a5a40-344e41)                                                                                  |
+| CSS      | Bootstrap Documentation                                            | [Link](https://getbootstrap.com/docs/4.0/utilities/flex/#justify-content)                                                                              |
+| CSS      | Online Color Value Picker                                          | [Link](https://imagecolorpicker.com/en)                                                                                                                |
+| CSS      | Neon Text                                                          | [Link](https://codepen.io/silvia-odwyer/pen/RwKMOpb)                                                                                                   |
+| JS       | JS Audio Object                                                    | [Link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)                                                                                |
+| JS       | Click Outside Element Example                                      | [Link](https://www.30secondsofcode.org/js/s/listen-click-outside-event/)                                                                               |
+| JS       | How to Read JSON File                                              | [Link](https://www.freecodecamp.org/news/how-to-read-json-file-in-javascript/)                                                                         |
+| JS       | How to Shuffle an Array                                            | [Link](https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/)                                             |
+| JS       | If Background is Dark {textColour = #fff} else {textColour = #000} | chatGPT                                                                                                                                                |
+| JS       | Google                                                             | [Link](https://fonts.google.com/selection/embed)                                                                                                       |
 
-## ChatGPT
+# ChatGPT
 
 Me:
 I'm thinking of the following JSON structure for my question bank.
