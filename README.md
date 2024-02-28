@@ -218,6 +218,11 @@ This structure allows for easy organization and retrieval of questions based on 
 
 ## Classes
 
+<figure>
+      <img src="./media/quizasquizasquizas_class-diagram.png" alt="Class Diagram">
+      <figcaption>Quizas-Quizas-Quizas Class Diagram </figcaption>
+</figure>
+
 #### AudioPlayer
 
 The `AudioPlayer` class handles audio playback functionalities within the application. It encapsulates features such as playing, pausing, resetting, and adjusting playback speed of audio files.
