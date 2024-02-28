@@ -17,33 +17,40 @@ Forget the clock! In this game, time is measured by the duration of [_Quizas, Qu
 
 ### Screenshots
 
-| ![Landing Page](/media/main-page.png)                                                                                                                                                                                                          |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <strong><span style="color: #0b7bfb">Main Landing Page</span></strong><br>Shows the Navbar with two options - Home and Scoreboard. Home takes you to the main landing page as seen below, while Scoreboard will take you to a scoreboard page. |
+<figure>
+      <img src="./media/main-page.png" alt="Go live">
+      <figcaption><strong><span style="color: #0b7bfb">Main Landing Page</span></strong><br>Shows the Navbar with two options - Home and Scoreboard. Home takes you to the main landing page as seen below, while Scoreboard will take you to a scoreboard page.</figcaption>
+</figure>
 
-| ![Rules Button](/media/ruleboard.png)                                                                                                                                                                                                                                    |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <strong><span style="color: #98ecae">Rules</strong></span><br>Like every new player, to get a good understanding of the game, they'd first take a look at the game rules. The _Rules_ button is clicked where the user will be briefed clearly on the rules of the game. |
+<figure>
+      <img src="./media/ruleboard.png" alt="Rules">
+      <figcaption><strong><span style="color: #98ecae">Rules</strong></span><br>Like every new player, to get a good understanding of the game, they'd first take a look at the game rules. The _Rules_ button is clicked where the user will be briefed clearly on the rules of the game.</figcaption>
+</figure>
 
-| ![Test Sound Button](/media/test-sound.png)                                                                                                                                                                                                                                                                                    |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <strong><span style="color: #0b7bfb">Test Sound</span></strong><br>This button simply allows the user to preview [_Quizas, Quizas, Quizas_](https://www.youtube.com/watch?v=xYz5CiEy5bY) and have a listen before starting the actual game. The user is also able to increase/decrease the playback rate for testing purposes. |
+<figure>
+      <img src="./media/test-sound.png" alt="Test Sound">
+      <figcaption><strong><span style="color: #0b7bfb">Test Sound</span></strong><br>This button simply allows the user to preview Quizas, Quizas, Quizas and have a listen before starting the actual game. The user is also able to increase/decrease the playback rate for testing purposes. </figcaption>
+</figure>
 
-| ![New Game Button](/media/new-game.png)                                                                                                                                                                                                                                                                          |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <strong><span style="color: #f4f966">New Game</span></strong><br>To start the game, players will click on the _New Game_ button, after which a _New Game Modal_ will pop up and prompt them to enter a name, and choose the desired categories. Once completed, the _Start!_ button is clicked to begin the game |
+<figure>
+      <img src="./media/new-game.png" alt="New Game">
+      <figcaption><strong><span style="color: #f4f966">New Game</span></strong><br>To start the game, players will click on the _New Game_ button, after which a _New Game Modal_ will pop up and prompt them to enter a name, and choose the desired categories. Once completed, the _Start!_ button is clicked to begin the game </figcaption>
+</figure>
 
-| ![Quiz Board](/media/quiz-board.png)                                                                                                                                                                                                                                                                                                                           |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <strong><span style="color: #e195af">Quiz Board</span></strong><br> Once the _Start!_ button is clicked, the player is taken to the main game (Quiz) board, and the song starts playing. This is where players will answer a series of questions. The number of questions is configurable (See Section _Configuration_). This page has two outcomes: Win/Lose. |
+<figure>
+      <img src="./media/quiz-board.png" alt="Quiz Board">
+      <figcaption><strong><span style="color: #e195af">Quiz Board</span></strong><br> Once the _Start!_ button is clicked, the player is taken to the main game (Quiz) board, and the song starts playing. This is where players will answer a series of questions. The number of questions is configurable (See Section _Configuration_). This page has two outcomes: Win/Lose. </figcaption>
+</figure>
 
-| ![Player Won Screen](/media/win.png)                                                                                                                                                                                                                                                                                                                               |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <strong><span style="color: #0b7bfb"> Player Successful Completion</span></strong><br> This page is shown when the player has successfully completed the quiz, by which all questions have been answered before the end of the song. It doesn't matter if the player has only 1 question correct or not. It appears as long as they complete before the song ends. |
+<figure>
+      <img src="./media/win.png" alt="Player Win">
+      <figcaption><strong><span style="color: #0b7bfb"> Player Successful Completion</span></strong><br> This page is shown when the player has successfully completed the quiz, by which all questions have been answered before the end of the song. It doesn't matter if the player has only 1 question correct or not. It appears as long as they complete before the song ends. </figcaption>
+</figure>
 
-| ![Player Lose Screen](/media/lose.png)                                                                                                                                                                   |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <strong><span style="color: #d07214"> Player Unsuccessful </span></strong><br> This page is shown when the player is unsuccessful and does not manage to answer all quiz questions before the song ends. |
+<figure>
+      <img src="./media/lose.png" alt="Player Lose">
+      <figcaption><strong><span style="color: #d07214"> Player Unsuccessful </span></strong><br> This page is shown when the player is unsuccessful and does not manage to answer all quiz questions before the song ends.  </figcaption>
+</figure>
 
 ## Installation
 
@@ -82,9 +89,15 @@ code .
 1. Start _Quiz-as, Quiz-as, Quiz-as_ locally using Live Server.
 
 -   With Live Server installed, click _Go Live_ at the bottom-right of VSCode.
-    ![Go Live](/media/server-not-started.png)
--   After starting the server, a window should automatically open in your default browser and the _Go Live_ now shows the port number of the local server. Otherwise, you can manually open the page by entering `http://localhost:<portnumber>` in your browser.
-    ![Server Started](/media/server-started.png)
+    <figure>
+      <img src="./media/server-not-started.png" alt="Go live">
+      <figcaption>"Go Live" Button</figcaption>
+    </figure>
+-   After starting the server, a window should automatically open in your default browser and the _Go Live_ now shows the port number of the local server. Otherwise, you can manually open the page by entering `http://localhost:<portnumber>` in your browser.<br>
+    <figure>
+      <img src="./media/server-started.png" alt="Server has started">
+      <figcaption>Server started</figcaption>
+    </figure>
 
 ## Configuration
 
@@ -203,6 +216,92 @@ const questionbank = {
 
 This structure allows for easy organization and retrieval of questions based on different topics, making it convenient for users to manage and access quiz content in the _Quiz-as, Quiz-as, Quiz-as_ application.
 
+## Classes
+
+#### AudioPlayer
+
+The `AudioPlayer` class handles audio playback functionalities within the application. It encapsulates features such as playing, pausing, resetting, and adjusting playback speed of audio files.
+
+##### Properties:
+
+-   `audio`: Represents the audio element to be played.
+-   `timeElapsed`: Tracks the elapsed time of the audio playback.
+-   `isPlaying`: Indicates whether the audio is currently playing.
+-   `playbackSpeed`: Represents the current playback speed of the audio.
+-   `speedup`: Specifies the amount by which the playback speed is increased or decreased.
+
+##### Methods:
+
+-   `playAudio()`: Initiates playback of the audio.
+-   `pauseAudio()`: Pauses the audio playback.
+-   `resetAudio()`: Resets the audio to the beginning.
+-   `increasePlaybackSpeed()`: Increases the playback speed of the audio.
+-   `decreasePlaybackSpeed()`: Decreases the playback speed of the audio.
+-   `saveMetadata()`: Returns metadata related to the audio playback, including playback rate and elapsed time.
+
+#### Player
+
+The `Player` class represents a player within the trivia game. It stores information about the player, including their ID, name, scores, and performance statistics.
+
+##### Properties:
+
+-   `playerId`: Unique identifier for the player.
+-   `playerName`: Name of the player.
+-   `playerScores`: Array containing the scores achieved by the player.
+-   `numCorrect`: Number of correct answers given by the player.
+-   `numWrong`: Number of wrong answers given by the player.
+-   `totalScores`: Total accumulated scores of the player.
+
+#### Scoreboard
+
+The `Scoreboard` class manages the scoreboard functionality of the game. It keeps track of all players and their scores.
+
+##### Properties:
+
+-   `allplayers`: Object containing all player instances.
+-   `currentPlayer`: Reference to the current player.
+
+##### Methods:
+
+-   `addPlayer(playerName)`: Adds a new player to the scoreboard.
+-   `generatePlayerId()`: Generates a unique player ID based on the current timestamp and a random string.
+-   `updateScore(points)`: Updates the score of the current player.
+-   `recordCorrectAnswer()`: Records a correct answer given by the current player.
+-   `recordWrongAnswer()`: Records a wrong answer given by the current player.
+-   `getTotalScore()`: Calculates and returns the total score of the current player.
+
+#### QuestionMaster
+
+The `QuestionMaster` class handles the management of quiz questions and gameplay. It facilitates functionalities such as fetching questions, starting the game, and processing player responses.
+
+##### Properties:
+
+-   `topics`: Array containing topics/categories of questions.
+-   `getNum`: Number of questions to fetch for the quiz.
+-   `gameStarted`: Indicates whether the game has started.
+-   `curPage`: Current page/question number.
+-   `curQuestion`: Current question being displayed.
+-   `curAnswer`: Answers to the current question.
+-   `correct`: Index of the correct answer.
+-   `advancePage`: Indicates whether to advance to the next question.
+-   `startTime`: Timestamp indicating when the game started.
+-   `elapsedTime`: Elapsed time since the start of the game.
+-   `veryFirstQuestion`: Flag to track if it's the first question.
+-   `endTheGame`: Flag to indicate if the game has ended.
+
+##### Methods:
+
+-   `fetchQuestions()`: Fetches a subset of questions from the question bank.
+-   `startGame()`: Starts the quiz game.
+-   `populateQuizScreen()`: Populates the quiz screen with questions and answers.
+-   `questionButtonsHandler(e)`: Handles user interaction with question buttons.
+-   `toggleClickEventListeners(enable)`: Toggles event listeners for question buttons.
+-   `updateQuizScores()`: Updates the scoreboard with player scores and statistics.
+-   `calculateScore(elapsedTime)`: Calculates the score based on the elapsed time.
+-   `startTimer()`: Starts the timer for tracking elapsed time.
+-   `stopTimer()`: Stops the timer.
+-   Utility functions for text manipulation and UI interactions are also included within the script.
+
 ## File Structure
 
 ```bash
@@ -263,6 +362,16 @@ Media files including audio .mp3, videos .mp4, and screenshots .png.
 | JS       | How to Shuffle an Array                                            | [Link](https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/)                                             |
 | JS       | If Background is Dark {textColour = #fff} else {textColour = #000} | chatGPT                                                                                                                                                |
 | JS       | Google                                                             | [Link](https://fonts.google.com/selection/embed)                                                                                                       |
+
+# Next Steps
+
+|           Feature            | Remarks                                                                                                                                                                                                                               |
+| :--------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|       Game Pause/Play        | the AudioPlayer class has some methods implemented such as saveMetaData() to save the song's elapsed time etc. for the pause/play function.                                                                                           |
+|          Game Reset          | This should reset all event listeners/modal windows/etc such that it is as though the user has just refreshed or entered the page.                                                                                                    |
+|    Save and Quit/Continue    | Current idea is to save current player's relevant metadata (audio metadata/player metadata/score metadata) into LocalStorage, and when the user wants to continue, everything can be obtained easily dedpite page refresh/page close. |
+|          Scoreboard          | Scoreboard class is in place, it'll hold a library of <strong>_Players_</strong>. When Scoreboard item from the Navbar is clicked, it'll generate a table and display on a different page, maybe `score.html`?                        |
+| Implement more trivia topics | HTML, CSS, etc.                                                                                                                                                                                                                       |
 
 # ChatGPT
 
